@@ -31,3 +31,5 @@ function register_my_menu() {
 }
 add_action( 'after_setup_theme', 'register_my_menu' );
 
+// Inclure le fichier menus.php
+require_once get_template_directory() . '/menus.php';
