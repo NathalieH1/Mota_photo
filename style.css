@@ -1,3 +1,32 @@
+/*
+Theme Name: Nathalie Mota
+Theme URI: https://mota_photo.org
+Description: Site photographe événementiel
+Author: Nathalie MOTA
+Author URI: https://nathalie_mota.org/
+Version: 1.0
+*/
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body * {
+    font-family:'Space Mono';
+
+}
+
+img#logo {
+    margin-top: 31px;
+}
+#logo {
+    width:216px;
+    height:14px;
+    margin-left:146px;
+}
+
 #nav_header {
   display:flex;
   justify-content: space-between;
@@ -5,13 +34,115 @@
 }
 .menu {
   display:flex;
-  justify-content: space-between;
+  justify-content:space-between;
   list-style:none;
-  text-decoration: none;
-  margin-right:30px;
+  text-decoration:none;
+  margin-top:31px;
+  margin-right: 400px;
 }
 .menu a {
-  margin-right: 30px;
-text-decoration: none;
+  margin-right:30px;
+  text-decoration:none;
   color:black;
+  font-size: 16px;
 }
+
+
+#menu-menu-footer {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px; 
+    border-top: solid #000000 1px; 
+}
+
+#menu-menu-footer a {
+    margin-right: 60px;
+}
+
+
+
+
+ /* The Modal (background) */
+
+ .modal {
+  position: relative; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Header */
+
+.image-container {
+    position: relative; /* Assurez-vous que le conteneur est positionné */
+    width: 100%; /* Ajustez la largeur du conteneur */
+    height: 100%; /* Ajustez la hauteur du conteneur */
+   
+}
+
+/* Image à l'intérieur du conteneur */
+.image-container img {
+    position: relative; /* Positionnez l'image absolument */
+    margin-top: 5%; /* Alignez l'image en haut */
+     margin-left: -40%;/* Alignez l'image à gauche */
+    width: 150%; /* Ajustez la largeur de l'image */
+    height: auto; /* Laissez la hauteur de l'image ajustée automatiquement */
+    overflow: hidden;
+}
+
+.modal-body {
+  position: relative;
+  margin-top: 20%; /* Ajustez le margin-top selon vos besoins */
+  margin-left: 25%; /* Ajustez le margin-left selon vos besoins */
+  font-size: 105%;
+}
+.form-container {
+  width: 100%; /* Ajustez la largeur du conteneur */
+  box-sizing: border-box; /* Assurez-vous que la largeur inclut le padding et la bordure */
+}
+/* Style du formulaire de contact */
+.wpcf7-form {
+  width: 150%; /* Ajustez la largeur du formulaire */
+  box-sizing: border-box; /* Assurez-vous que la largeur inclut le padding et la bordure */
+}
+
+/* Style des éléments du formulaire de contact */
+.wpcf7-form p {
+  margin-bottom: 10px; /* Ajustez la marge entre les paragraphes du formulaire */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  margin: auto;
+  margin-top: 10%;
+  padding: 0;
+  border: 3px solid #000000;
+  width: 30%;
+  height: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  overflow: hidden;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
