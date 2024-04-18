@@ -16,6 +16,7 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 function mota_photo_enqueue_scripts() {
     // Enqueue le script JavaScript avec URL absolue
     wp_enqueue_script('main-js', get_template_directory_uri() . '/scripts/script.js', array('jquery'), '', true);
+    wp_localize_script('script', 'my_ajax_obj', ['ajax_url' => admin_url('admin-ajax.php')]);
 }
 add_action('wp_enqueue_scripts', 'mota_photo_enqueue_scripts');
 
@@ -36,5 +37,58 @@ add_action('after_setup_theme', 'register_footer_menu');
 
 // Inclure le fichier menus.php
 require_once get_template_directory() . '/menus.php';
+
+function displayTaxonomies($nomTaxonomie)
+{
+    if ($terms = get_terms([
+        'taxonomy' => $nomTaxonomie,
+        'orderby' => 'name',
+    ])) {
+        foreach ($terms as $term) {
+            echo '<option class="js-filter-item" value="'.$term->slug.'">'.$term->name.'</option>';
+        }
+    }
+}
+
+function filter()
+{
+    $photos = new WP_Query([
+        'post_type' => 'photo',
+        'orderby' => 'date',
+        'order' => $_POST['orderDirection'],
+        'posts_per_page' => 4,
+        'paged' => $_POST['page'],
+        'tax_query' => [
+                'relation' => 'AND',
+                $_POST['categorieSelection'] != 'all' ?
+                    [
+                        'taxonomy' => $_POST['categorieTaxonomie'],
+                        'field' => 'slug',
+                        'terms' => $_POST['categorieSelection'],
+                    ]
+                : '',
+                $_POST['formatSelection'] != 'all' ?
+                    [
+                        'taxonomy' => $_POST['formatTaxonomie'],
+                        'field' => 'slug',
+                        'terms' => $_POST['formatSelection'],
+                    ]
+                : '',
+            ],
+        ]
+    );
+    if ($photos->have_posts()) {
+        while ($photos->have_posts()) {
+            include 'Templates-parts/photo_block.php';
+        }
+    } else {
+        echo '';
+    }
+    wp_reset_postdata();
+    exit();
+}
+add_action('wp_ajax_nopriv_filter', 'filter');
+add_action('wp_ajax_filter', 'filter');
+
 
 
