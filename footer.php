@@ -1,4 +1,5 @@
 </main>
+<?php get_template_part('Templates-parts/modale_contact'); ?>
 <footer class="footer">
     <nav class="footer_nav">
         <?php
@@ -7,11 +8,8 @@
                 'container' => false,
             ));
         ?>
-        <ul>
-            <li>Tous droits réservés</li>
-        </ul>
     </nav>
-    <?php get_template_part('Templates-parts/modale_contact'); ?>
+    
     <?php wp_footer(); ?>
 </footer>
 </body>
