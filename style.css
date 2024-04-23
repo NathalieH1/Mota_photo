@@ -554,29 +554,20 @@ text-transform: uppercase;
 }
 
 section.hero {
-  position: relative;
-  width: 100%;
-  overflow: hidden; /* Assurez-vous que le contenu débordant est caché */
-  max-height: 30vh;
- 
-}
-
+  position: relative; /* Assurez-vous que la position est relative pour que les éléments enfants puissent être positionnés par rapport à elle */
+  width: 100%; /* 100% de largeur */
+  max-height:auto; /* Ajuster automatiquement la hauteur en fonction du contenu */
+ }
 .hero_image {
-  position: relative;
-  width: 100%;
-  
- 
-  max-height: 30vh; /* Limitez la hauteur de l'image à 30% de la hauteur de la vue */
-  z-index: 0;
-  box-sizing: border-box;
-}
-
-.hero h1 {
-  position: absolute;
-  top: 40%;
-  left: 50%;
+  position:relative;
+  width: 120%;
+  object-fit:cover;
+  height:30%;
+  z-index:0;
+ }
+ .hero h1 {
   align-self: center;
-  transform: translate(-50%, -50%); /* Centrez le titre */
+  position: absolute;
   font-family: "Space Mono", monospace;
   font-style: italic;
   font-size: 6.3vw;
@@ -584,9 +575,8 @@ section.hero {
   text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff;
   mix-blend-mode: lighten;
   z-index: 1;
-  white-space: nowrap;
-}
-
+  margin-top:-150%;
+ }
 
 /* Affiche le menu de navigation en mode responsive */
 #nav_header.visible {
@@ -613,7 +603,14 @@ section.hero {
     color: #fff; /* Couleur du texte */
     text-decoration: none; /* Supprime les soulignements */
 }
-
+#wpadminbar {
+  display: none;
+}
+.footer_nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .filtres.organisation {
   display:flex;
   flex-direction: column;
@@ -638,9 +635,7 @@ text-align: center;
 .half {
   width: 100%;
 }
-.post_photo{
-  height: 30vh;
-}
+
 .modal-content {
 width: 98.5%;
 margin:0;
@@ -654,16 +649,4 @@ width:80%;
 height: 20%;
 }
 
-#wpadminbar {
-  display: none;
-}
-.footer_nav {
-  border-top: solid 1px #000000;
-  justify-content: center;
-}
-.footer_nav ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 }
