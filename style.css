@@ -76,27 +76,28 @@ main {
   position: relative;
   background-color: #ffffff;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   padding: 0;
   border: 3px solid #000000;
   width: 30%;
   height: 80%;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-animation-name: animatetop;
-  -webkit-animation-duration: 0.4s;
+  -webkit-animation-duration: 1.5s;
   animation-name: animatetop;
-  animation-duration: 0.4s;
+  animation-duration: 1.5s;
   overflow: hidden;
 }
 
 /* Animation Modal*/
 @-webkit-keyframes animatetop {
-  from {top: -300px; opacity: 0}
+  from {top: -150px; opacity: 0}
   to {top: 0; opacity: 1}
 }
 
 @keyframes animatetop {
-  from {top: -300px; opacity: 0}
+  from {top: -150px; opacity: 0}
   to {top: 0; opacity: 1}
 }
 
@@ -169,7 +170,7 @@ margin-left: 45px;
   min-width: 196px;
 }
 
-/* hero */
+/*** hero ***/
 
 .hero {
  width: 100%;
@@ -195,7 +196,7 @@ margin-left: 45px;
  object-fit: cover;
 }
 
-/* filtres */
+/*** filtres ***/
 
 .filtres {
  font-family: "Space Mono", monospace;
@@ -217,16 +218,19 @@ margin-left: 45px;
  margin-bottom: 10px;
 }
 
-/* Mettre le texte "CATÉGORIES" en majuscules */
+/*** Mettre le texte des taxonomies en majuscule ***/
+
 #select-categorie, #categorie {
   text-transform: uppercase;
 }
 #select-format, #format {
   text-transform: uppercase;
 }
+#select-ordre, #ordre {
+  text-transform: uppercase;
+}
 
-
-/* photos */
+/*** photos ***/
 
 .photos {
 padding-top: 32px !important;
@@ -275,7 +279,7 @@ justify-content: space-between;
   width: 49.2%;
 }
 
-/* post_photo */ 
+/*** post_photo ***/ 
 
 .post_photo {
   height: 74vh;
@@ -353,7 +357,7 @@ font-size: 14px;
 text-transform: uppercase;
 }
 
-/* charger plus */
+/*** charger plus ***/
 
 .charger_plus_btn {
   margin: 27px auto 47px auto;
@@ -387,7 +391,7 @@ text-transform: uppercase;
 opacity: 1;
 }
 
-/* single */
+/*** single ***/
 
 .single-page {
 width: 80%;
@@ -513,7 +517,13 @@ line-height: 65px;
 text-transform: uppercase;
 }
 
+/*** Media Queries ***/
+
 @media all and (max-width: 391px) {
+
+  .header {
+    margin-top: -10%;
+  }
   .header_logo {
     margin-left: -20px;
     width: 80%;
@@ -524,6 +534,7 @@ text-transform: uppercase;
       justify-content: center;
       align-items: center;
       margin: 0 auto;
+      margin-right: -15%;
       font-size: 40px;
       color: ffffff;
       cursor: pointer;
@@ -531,15 +542,51 @@ text-transform: uppercase;
   #nav_header {
     display: none;
     position: absolute;
-    top: 18%; /* Place le menu de navigation sous l'icône burger */
+    top: 12%; /* Place le menu de navigation sous l'icône burger */
     left: 0; /* Aligne le menu de navigation sur la gauche */
     width: 100%; /* Assure que le menu de navigation prend toute la largeur */
-    background-color: #ffffff; /* Ajoute un fond blanc */
+    height: 102%;
+    background-color: #E00000; /* Ajoute un fond blanc */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); /* Ajoute une ombre */
-    z-index: 1; /* Assure que le menu de navigation est au-dessus du contenu */
-    padding: 10px 0; /* Ajoute un espacement autour des éléments du menu */
+    z-index: 2; /* Assure que le menu de navigation est au-dessus du contenu */
+    justify-content: center;
     text-align: center; /* Centre les éléments du menu */
 }
+
+section.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Assurez-vous que le contenu débordant est caché */
+  max-height: 30vh;
+ 
+}
+
+.hero_image {
+  position: relative;
+  width: 100%;
+  
+ 
+  max-height: 30vh; /* Limitez la hauteur de l'image à 30% de la hauteur de la vue */
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+.hero h1 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  align-self: center;
+  transform: translate(-50%, -50%); /* Centrez le titre */
+  font-family: "Space Mono", monospace;
+  font-style: italic;
+  font-size: 6.3vw;
+  text-transform: uppercase;
+  text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff;
+  mix-blend-mode: lighten;
+  z-index: 1;
+  white-space: nowrap;
+}
+
 
 /* Affiche le menu de navigation en mode responsive */
 #nav_header.visible {
@@ -550,27 +597,23 @@ text-transform: uppercase;
 #nav_header ul {
     display: block; /* Change l'affichage en bloc */
     padding: 0; /* Supprime les marges */
+    margin-top: 60%; 
 }
 
 #nav_header li {
     display: block; /* Change l'affichage en bloc */
     margin: 0; /* Supprime les marges */
+    font-size: 44px;
+   
 }
 
 #nav_header a {
     display: block; /* Change l'affichage en bloc */
     padding: 10px 0; /* Ajoute un espacement entre les éléments du menu */
-    color: #333333; /* Couleur du texte */
+    color: #fff; /* Couleur du texte */
     text-decoration: none; /* Supprime les soulignements */
 }
-#wpadminbar {
-  display: none;
-}
-.footer_nav ul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 .filtres.organisation {
   display:flex;
   flex-direction: column;
@@ -595,5 +638,32 @@ text-align: center;
 .half {
   width: 100%;
 }
+.post_photo{
+  height: 30vh;
+}
+.modal-content {
+width: 98.5%;
+margin:0;
+}
+.wpcf7-form {
+ margin-left:-20%;
+ 
+}
+input, .wpcf7 {
+width:80%;
+height: 20%;
 }
 
+#wpadminbar {
+  display: none;
+}
+.footer_nav {
+  border-top: solid 1px #000000;
+  justify-content: center;
+}
+.footer_nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+}
