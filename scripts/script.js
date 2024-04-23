@@ -22,7 +22,7 @@
   
       $.ajax({
           type: 'POST',
-          url: my_ajax_obj.ajax_url,
+          url: "http://localhost/Nathalie_Mota/wp-admin/admin-ajax.php",
           dataType: 'html',
           data: {
               action: 'filter',
@@ -58,8 +58,6 @@
       });
   }
   
-  
-  
   navigationPhotos($('.arrow-gauche'), $('.previous-image'));
   navigationPhotos($('.arrow-droite'), $('.next-image'));
   
@@ -77,6 +75,24 @@
   
   })(jQuery);  
   
+  /*** Menu Burger ***/
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle');
+    const navMenu = document.getElementById('nav_header');
+
+    toggleButton.addEventListener('click', function() {
+        navMenu.classList.toggle('visible'); // Ajoute ou supprime la classe 'visible' au menu de navigation
+    });
+});
+
+
+
+
+
+
+
+
+
 
 
 
