@@ -58,8 +58,9 @@
     <div class="tri organisation half">
       <div class="half"></div>
       <form id="ordre" class="taxonomie taxonomie_formats filtre half">
-        <label for="select-ordre">TRIER PAR</label>
+        <!--<label for="select-ordre">TRIER PAR</label>-->
         <select id="select-ordre" name="ordre">
+        <option value="all" hidden disabled selected>TRIER PAR</option>
           <option class="js-ordre-item" value="DESC">À partir des plus récentes</option>
           <option class="js-ordre-item" value="ASC">À partir des plus anciennes</option>
         </select>
