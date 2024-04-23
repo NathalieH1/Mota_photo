@@ -20,13 +20,94 @@ main {
   margin: 0 auto;
 }
 
+
+/*** The Modal ***/
+
+.modal {
+  position: relative; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+}
+
+.image-container {
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+   
+}
+
+.image-container img {
+    position: relative; 
+    margin-top: 5%; 
+     margin-left: -40%;
+    width: 150%; 
+    height: auto; 
+    overflow: hidden;
+}
+
+.modal-body {
+  position: relative;
+  margin-top: 20%;
+  margin-left: 25%; 
+  font-size: 105%;
+}
+.form-container {
+  width: 100%; 
+  box-sizing: border-box; 
+}
+
+.wpcf7-form {
+  width: 150%; 
+  box-sizing: border-box; 
+}
+
+
+.wpcf7-form p {
+  margin-bottom: 10px; 
+}
+
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  margin: auto;
+  margin-top: 10%;
+  padding: 0;
+  border: 3px solid #000000;
+  width: 30%;
+  height: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  overflow: hidden;
+}
+
+/* Animation Modal*/
+@-webkit-keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+
+
 /* Header */
 .header {
  display: flex;
  align-items: center;
  justify-content: space-between;
- height: 80px;
- padding: 0 10%;
+ height: 100px;
+ padding: 0 20%;
  box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.03);
 }
 
@@ -42,7 +123,7 @@ list-style: none;
 nav {
   display: flex;
   font-family: "Space Mono", monospace;
-  line-height: 24px;
+  line-height: 64px;
   text-transform: uppercase;
 }
 
@@ -63,6 +144,11 @@ nav li:hover {
 .header li {
 margin-left: 45px;
 }
+
+.menu-toggle {
+  display: none;
+}
+
 
 /* footer */
 .footer {
@@ -105,7 +191,7 @@ margin-left: 45px;
 
 .hero_image {
  height: 100%;
- width: 100%;
+ width: 80%;
  object-fit: cover;
 }
 
@@ -114,7 +200,6 @@ margin-left: 45px;
 .filtres {
  font-family: "Space Mono", monospace;
  font-size: 14px;
- text-transform: uppercase;
  margin-bottom: 50px;
 }
 .filtres .filtre {
@@ -124,12 +209,22 @@ margin-left: 45px;
 .filtres select {
  width: 100%;
  height: 40px;
+ text-transform: lowercase;
  border: 1px solid #000;
  font-family: "Space Mono", monospace;
  font-size: 14px;
  padding-left: 24px;
  margin-bottom: 10px;
 }
+
+/* Mettre le texte "CATÉGORIES" en majuscules */
+#select-categorie, #categorie {
+  text-transform: uppercase;
+}
+#select-format, #format {
+  text-transform: uppercase;
+}
+
 
 /* photos */
 
@@ -417,3 +512,88 @@ font-size: 66px;
 line-height: 65px;
 text-transform: uppercase;
 }
+
+@media all and (max-width: 391px) {
+  .header_logo {
+    margin-left: -20px;
+    width: 80%;
+  }
+  .menu-toggle {
+      width: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      font-size: 40px;
+      color: ffffff;
+      cursor: pointer;
+  }
+  #nav_header {
+    display: none;
+    position: absolute;
+    top: 18%; /* Place le menu de navigation sous l'icône burger */
+    left: 0; /* Aligne le menu de navigation sur la gauche */
+    width: 100%; /* Assure que le menu de navigation prend toute la largeur */
+    background-color: #ffffff; /* Ajoute un fond blanc */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); /* Ajoute une ombre */
+    z-index: 1; /* Assure que le menu de navigation est au-dessus du contenu */
+    padding: 10px 0; /* Ajoute un espacement autour des éléments du menu */
+    text-align: center; /* Centre les éléments du menu */
+}
+
+/* Affiche le menu de navigation en mode responsive */
+#nav_header.visible {
+    display: block;
+}
+
+/* Affiche les éléments du menu de navigation en dessous les uns des autres */
+#nav_header ul {
+    display: block; /* Change l'affichage en bloc */
+    padding: 0; /* Supprime les marges */
+}
+
+#nav_header li {
+    display: block; /* Change l'affichage en bloc */
+    margin: 0; /* Supprime les marges */
+}
+
+#nav_header a {
+    display: block; /* Change l'affichage en bloc */
+    padding: 10px 0; /* Ajoute un espacement entre les éléments du menu */
+    color: #333333; /* Couleur du texte */
+    text-decoration: none; /* Supprime les soulignements */
+}
+#wpadminbar {
+  display: none;
+}
+.footer_nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filtres.organisation {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+text-align: center;
+}
+
+#format {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.filtres select {
+  width: 100%;
+}
+.organisation {
+  display: block;
+}
+.half {
+  width: 100%;
+}
+}
+
