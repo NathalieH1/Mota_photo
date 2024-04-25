@@ -218,6 +218,27 @@ margin-left: 45px;
  margin-bottom: 10px;
 }
 
+/* Définition des styles de base pour les options */
+.js-filter-item {
+  transition: background-color 0.3s ease;
+}
+
+/* Couleur de fond lorsque survolé */
+.js-filter-item:hover {
+  background-color: #FFD6D6;
+}
+
+/* Couleur de fond lorsque sélectionné */
+.js-filter-item.selected {
+  background-color: #E00000;
+}
+
+/* Couleur de fond lorsque cliqué */
+.js-filter-item:active {
+  background-color: #FE5858;
+}
+
+
 /*** Mettre le texte des taxonomies en majuscule ***/
 
 #select-categorie, #categorie {
@@ -554,20 +575,29 @@ text-transform: uppercase;
 }
 
 section.hero {
-  position: relative; /* Assurez-vous que la position est relative pour que les éléments enfants puissent être positionnés par rapport à elle */
-  width: 100%; /* 100% de largeur */
-  max-height:auto; /* Ajuster automatiquement la hauteur en fonction du contenu */
- }
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Assurez-vous que le contenu débordant est caché */
+  max-height: 30vh;
+ 
+}
+
 .hero_image {
-  position:relative;
-  width: 120%;
-  object-fit:cover;
-  height:30%;
-  z-index:0;
- }
- .hero h1 {
-  align-self: center;
+  position: relative;
+  width: 100%;
+  
+ 
+  max-height: 30vh; /* Limitez la hauteur de l'image à 30% de la hauteur de la vue */
+  z-index: 0;
+  box-sizing: border-box;
+}
+
+.hero h1 {
   position: absolute;
+  top: 40%;
+  left: 50%;
+  align-self: center;
+  transform: translate(-50%, -50%); /* Centrez le titre */
   font-family: "Space Mono", monospace;
   font-style: italic;
   font-size: 6.3vw;
@@ -575,8 +605,9 @@ section.hero {
   text-shadow: 3px 0 #fff, -3px 0 #fff, 0 3px #fff, 0 -3px #fff, 3px 3px #fff, -3px -3px #fff, 3px -3px #fff, -3px 3px #fff;
   mix-blend-mode: lighten;
   z-index: 1;
-  margin-top:-150%;
- }
+  white-space: nowrap;
+}
+
 
 /* Affiche le menu de navigation en mode responsive */
 #nav_header.visible {
@@ -635,7 +666,24 @@ text-align: center;
 .half {
   width: 100%;
 }
-
+.post_photo .img-photo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  display: block;
+}
+.post_photo .photo-hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 50%;
+  margin-top: -74vh;
+  opacity: 0;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .92) 100%);
+}
 .modal-content {
 width: 98.5%;
 margin:0;
@@ -648,5 +696,13 @@ input, .wpcf7 {
 width:80%;
 height: 20%;
 }
-
+.footer_nav {
+  border-top:solid 1px #000000;
+}
+#menu-item-59 {
+  margin-right: 10%;
+}
+#menu-item-60 {
+  margin-right: 10%;
+}
 }
