@@ -88,6 +88,22 @@
             wp_reset_postdata();
         ?>
   </div>
+
+<!--Lightbox-->
+
+  <div class="lightbox hidden" id="lightbox">
+      <button class="lightbox__close" title="Refermer cet agrandissement"></button>
+      <div class="lightbox__container">
+          <div class="lightbox__loader hidden"></div>
+          <div class="lightbox__container_info flexcolumn" id="lightbox__container_info">
+              <div class="lightbox__container_content flexcolumn" id="lightbox__container_content"></div>
+              <button class="lightbox__next" aria-label="Voir la photo suivante" title="Photo suivante"></button>
+              <button class="lightbox__prev" aria-label="Voir la photo précente" title="Photo précédente"></button>
+          </div>
+      </div>
+  </div>
+
+
   <div class="charger_plus_btn" id="charger_plus">
     <input type="button" style="text-align: center;" value="Charger plus">
     <img id="btn-charger_plus" src="<?php echo get_template_directory_uri(); ?>/Photos NMota/camera_icon.png"
