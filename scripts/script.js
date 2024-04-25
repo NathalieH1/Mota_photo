@@ -57,7 +57,42 @@
           },
       });
   }
+
   
+/*** Section filtres ***/
+  $(document).ready(function() {
+    // Lorsqu'une option est sélectionnée
+    $('#select-categorie').change(function() {
+      // Supprimer la classe "selected" de toutes les options
+      $('.js-filter-item').removeClass('selected');
+      // Ajouter la classe "selected" à l'option sélectionnée
+      $(this).find(':selected').addClass('selected');
+    });
+  });
+
+  /*** Lightbox ***/
+  var lightbox = document.getElementById('lightbox-container');
+var btnFermetureLightbox = document.getElementById('lightbox__close');$(document).on('click', '.full-screen', function () {
+    var image = $(this).parent().parent().prev();
+    var urlImage = image.attr('src');
+    $("#lightbox__container_content").empty();
+    var creerImage = '<img src="' + urlImage + '" alt="Image agrandie">';
+    $('.lightbox__container_content').append(creerImage);
+    $("#lightbox__container_content").removeClass("hidden");
+    $('.lightbox').css('display', 'block');
+  });
+  $(document).on('click', '.lightbox__close', function () {
+    $('.lightbox').css('display', 'none');
+    $("#lightbox__container_content").empty();
+  });
+
+  /*** Modal ***/
+  var modale = document.getElementById('myModal');
+  $('.menu-item-107, interaction-photo__btn').click(function () {
+    $(modale).css('display', 'flex');
+});
+
+
   navigationPhotos($('.arrow-gauche'), $('.previous-image'));
   navigationPhotos($('.arrow-droite'), $('.next-image'));
   
