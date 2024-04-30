@@ -16,8 +16,8 @@
   
      
   function ajaxRequest(chargerPlus) {
-      var categorieSelection = $('#select-categorie').val();
-      var formatSelection = $('#select-format').val();
+    var categorieSelection = ($('#select-categorie').val() == null ) ? 'all' : $('#select-categorie').val();
+    var formatSelection = ( $('#select-format').val() == null) ? 'all' : $('#select-format').val();
       var ordre = $('#select-ordre').val();
   
       $.ajax({
@@ -88,10 +88,18 @@ var btnFermetureLightbox = document.getElementById('lightbox__close');$(document
 
   /*** Modal ***/
   var modale = document.getElementById('myModal');
-  $('.menu-item-107, interaction-photo__btn').click(function () {
+  $('.menu-item-107, .interaction-photo__btn').click(function () {
     $(modale).css('display', 'flex');
 });
-
+window.onclick = function (event) {
+  if (event.target == modale) {
+    $(modale).css('display', 'none');
+  }
+};
+$('.interaction-photo__btn').click(function () {
+  var reference = $('#reference-photo').text();
+  $('#ref').val(reference);
+});
 
   navigationPhotos($('.arrow-gauche'), $('.previous-image'));
   navigationPhotos($('.arrow-droite'), $('.next-image'));
