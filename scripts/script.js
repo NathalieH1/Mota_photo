@@ -1,3 +1,5 @@
+ /***   Charger plus   ***/
+
 (function ($) {
     'use strict';
   
@@ -14,7 +16,7 @@
       ajaxRequest(false);
   });
   
-     
+
   function ajaxRequest(chargerPlus) {
     var categorieSelection = ($('#select-categorie').val() == null ) ? 'all' : $('#select-categorie').val();
     var formatSelection = ( $('#select-format').val() == null) ? 'all' : $('#select-format').val();
