@@ -241,7 +241,7 @@ margin-left: 45px;
 }
 
 /* Couleur de fond lorsque survolé */
-.js-filter-item:hover {
+.js-filter-item.hover {
   background-color: #FFD6D6;
 }
 
@@ -251,7 +251,7 @@ margin-left: 45px;
 }
 
 /* Couleur de fond lorsque cliqué */
-.js-filter-item:active {
+.js-filter-item.active {
   background-color: #FE5858;
 }
 
