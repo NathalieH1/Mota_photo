@@ -1,6 +1,7 @@
-
 <!--boucle WP en cours pour afficher chaque photo de la liste-->
-<?php $photos->the_post();global $post;
+<?php $photos->the_post();
+
+global $post;
 $current_post = $post;
 $next_post = get_adjacent_post(false, '', false);
 if ($next_post) {
@@ -12,7 +13,11 @@ if ($next_post) {
     $next_post_ref = 'null';
     $next_post_categorie = 'null';
     $next_post_img = 'null';
-}$previous_post = get_adjacent_post(false, '', true);// Vérifier si le post précédent existe
+}
+
+$previous_post = get_adjacent_post(false, '', true);
+
+// Vérifier si le post précédent existe
 if ($previous_post) {
     // Récupérer les informations nécessaires du post précédent
     $previous_post_ref = get_field('reference', $previous_post->ID);
@@ -22,18 +27,22 @@ if ($previous_post) {
     $previous_post_ref = 'null';
     $previous_post_categorie = 'null';
     $previous_post_img = 'null';
-}?>
-  <!--conteneur divisé en 2 parties-->  
+}
+
+?>
+  <!--conteneur divisé en 2 parties-->
+  
+
   <div class="half">
   <!--conteneur principal de chaque photo-->
       <div class="post_photo">
           <!--cette ligne affiche l'image mise en avant de l'article actuel en utilisant la fonction "the_post_thumbnail_url()"-->
-          <img
-           data-next-img="<?php echo $next_post_img; ?>"
-           data-next-ref="<?php echo $next_post_ref; ?>"
+          <img 
+           data-next-img="<?php echo $next_post_img; ?>" 
+           data-next-ref="<?php echo $next_post_ref; ?>" 
            data-next-cat="<?php echo $next_post_categorie; ?>"
-           data-previous-img="<?php echo $previous_post_img; ?>"
-           data-previous-ref="<?php echo $previous_post_ref; ?>"
+           data-previous-img="<?php echo $previous_post_img; ?>" 
+           data-previous-ref="<?php echo $previous_post_ref; ?>" 
            data-previous-cat="<?php echo $previous_post_categorie; ?>"
            data-ref="<?php echo get_field('reference'); ?>"
            data-categorie="<?php echo strip_tags(get_the_term_list($photos->ID, 'categorie')); ?>"
@@ -56,4 +65,4 @@ if ($previous_post) {
               </div>
           </div>
       </div>
-  </div>
+  </div> 
