@@ -72,6 +72,12 @@
       // Ajouter la classe "selected" à l'option sélectionnée
       $(this).find(':selected').addClass('selected');
     });
+    $('#select-format').change(function() {
+      // Supprimer la classe "selected" de toutes les options
+      $('.js-filter-item').removeClass('selected');
+      // Ajouter la classe "selected" à l'option sélectionnée
+      $(this).find(':selected').addClass('selected');
+    });
   });
 
   /*** Lightbox ***/
