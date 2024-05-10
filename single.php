@@ -11,8 +11,9 @@
 
   get_header();?>
 
+<!-- Section de la page dédiée à l'affichage des détails d'une photo unique -->
  <div class="single-page">
- 
+
    <section class="single-photo organisation">
 	 <div class="single-description half">
 	   <h1><?php the_title() ?></h1>
@@ -24,12 +25,15 @@
 	 </div>
 	 <img class="single-image half" src="<?php the_post_thumbnail_url(); ?>">
    </section>
- 
+
+ <!-- Ouverture de la popup de contact -->
    <section class="interaction-photo organisation">
 	 <div>
 	   <p class="texte">Cette photo vous intéresse ?</p>
 	   <input class="interaction-photo__btn bouton btn-modale" type="button" value="Contact">
 	 </div>
+
+	<!-- Navigation entre les photos et affichage des photos en miniature --> 
 	 <div class="interaction-photo__navigation">
 	   <?php
 					 $prevPost = get_previous_post();
@@ -65,6 +69,7 @@
 	 </div>
    </section>
  
+   <!-- Section liste des photos apparentées -->
    <section class="recommandations">
 	 <h2>Vous aimerez aussi</h2>
 	 <div class="recommandations__images organisation">
@@ -98,7 +103,7 @@
 				 else {
 					 echo '<p class="texte">Il n\'y a pas encore d\'autres photos à afficher dans cette catégorie.</p>';
 				 }
-				 /* wp_reset_postdata(); */
+				 
 			 ?>
  
 	 </div>
