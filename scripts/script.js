@@ -41,18 +41,6 @@
               } else {
                   $('.photo_type').html(resultat);
               }
-  
-              if (categorieSelection === 'Mariage' && pageActuelle >= 3) {
-                  $('#charger_plus_btn').attr('style', 'display: none;');
-              } else if (pageActuelle === 5) {
-                  $('#charger_plus_btn').attr('style', 'display: none;');
-              } else if (
-                  (categorieSelection === 'Concert' || categorieSelection === 'Reception' 
-                  || categorieSelection === 'Television') && pageActuelle === 1) {
-                  $('#charger_plus_btn').attr('style', 'display: none;');
-              } else {
-                  $('#charger_plus_btn').attr('style', 'display: block;');
-              }
           },
           error: function (result) {
               console.warn(result);
@@ -63,22 +51,21 @@
   
 /*** Section filtres ***/
 
-
-  $(document).ready(function() {
-    // Lorsqu'une option est sélectionnée
-    $('#select-categorie, #select-format').change(function() {
-      // Supprimer la classe "selected" de toutes les options
-      $('.js-filter-item').removeClass('selected');
-      // Ajouter la classe "selected" à l'option sélectionnée
-      $(this).find(':selected').addClass('selected');
-    });
-    $('#select-format').change(function() {
-      // Supprimer la classe "selected" de toutes les options
-      $('.js-filter-item').removeClass('selected');
-      // Ajouter la classe "selected" à l'option sélectionnée
-      $(this).find(':selected').addClass('selected');
-    });
+$(document).ready(function() {
+  // Lorsqu'une option est sélectionnée
+  $('#select-categorie').change(function() {
+    // Supprimer la classe "selected" de toutes les options
+    $('.js-categorie').removeClass('selected');
+    // Ajouter la classe "selected" à l'option sélectionnée
+    $(this).find(':selected').addClass('selected');
   });
+  $('#select-format').change(function() {
+    // Supprimer la classe "selected" de toutes les options
+    $('.js-format').removeClass('selected');
+    // Ajouter la classe "selected" à l'option sélectionnée
+    $(this).find(':selected').addClass('selected');
+  });
+});
 
   /*** Lightbox ***/
 
