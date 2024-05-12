@@ -627,6 +627,10 @@ width: 25px;
 cursor: pointer;
 }
 
+.wpcf7-text {
+  text-transform: uppercase;
+}
+
 .recommandations {
 padding-top: 77px;
 }
