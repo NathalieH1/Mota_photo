@@ -235,22 +235,42 @@ margin-left: 45px;
 }
 
 /* Définition des styles de base pour les options */
-.js-filter-item {
+.js-categorie {
   transition: background-color 0.3s ease;
 }
 
 /* Couleur de fond lorsque survolé */
-.js-filter-item.hover {
+.js-categorie.hover {
   background-color: #FFD6D6;
 }
 
 /* Couleur de fond lorsque sélectionné */
-.js-filter-item.selected {
+.js-categorie.selected {
   background-color: #E00000;
 }
 
 /* Couleur de fond lorsque cliqué */
-.js-filter-item.active {
+.js-categorie.active {
+  background-color: #FE5858;
+}
+
+/* Définition des styles de base pour les options */
+.js-format {
+  transition: background-color 0.3s ease;
+}
+
+/* Couleur de fond lorsque survolé */
+.js-format.hover {
+  background-color: #FFD6D6;
+}
+
+/* Couleur de fond lorsque sélectionné */
+.js-format.selected {
+  background-color: #E00000;
+}
+
+/* Couleur de fond lorsque cliqué */
+.js-format:active {
   background-color: #FE5858;
 }
 
@@ -630,7 +650,6 @@ cursor: pointer;
 .wpcf7-text {
   text-transform: uppercase;
 }
-
 .recommandations {
 padding-top: 77px;
 }
@@ -795,9 +814,9 @@ text-align: center;
   width: 100%;
 }
 .post_photo {
-  height: 45vh;
+  height: 35vh;
 }.post_photo .photo-hover {
-  margin-top: -45vh;
+  margin-top: -35vh;
 }
 .modal-content {
 width: 100%;
