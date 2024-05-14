@@ -1,5 +1,6 @@
 </main>
 <?php get_template_part('Templates-parts/modale_contact'); ?>
+<?php get_template_part('templates-parts/lightbox'); ?>
 <footer class="footer">
     <nav class="footer_nav">
         <?php
