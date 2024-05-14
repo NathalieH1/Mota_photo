@@ -1,5 +1,4 @@
- /***   Charger plus   ***/
-
+ /***   Section Charger plus   ***/
 (function ($) {
     'use strict';
   
@@ -15,12 +14,12 @@
       pageActuelle = 1;
       ajaxRequest(false);
   });
-      /***  la réquéte ajax vers le serveur wordpress pour récupérer les posts selon les critéres de l'utilisateur 
+      /***  la requête ajax vers le serveur wordpress pour récupérer les posts selon les critères de l'utilisateur 
      *    url: contient l'url vers /admin-ajax.php
      *    action : la fonction filtrer du fichier functions.php
      *    data: la catégorie souhaitée categorieSelection et format formatSelection et l'ordre puis la page actuelle
-     *    le button charger plus permet de faire un append() rajouter des posts au posts existant et les filtres permet de faire
-     *    html() afficher un nouveau contenus
+     *    le button charger plus permet de faire un append() rajouter des posts au post existant et les filtres permettent de faire
+     *    html() afficher un nouveau contenu
      * 
       ***/
 
@@ -82,6 +81,8 @@ $(document).ready(function() {
   var image = null;
   var next = null;
   var previous = null;
+
+  /*** afficher le post selectionné ***/
   $(document).on('click', '.full-screen', function () {
     image = $(this).parent().parent().prev();
     var urlImage = image.attr('src');
@@ -89,6 +90,8 @@ $(document).ready(function() {
     let categorie = image.attr('data-categorie');
     afficher_lightbox(urlImage, ref, categorie);
   });
+
+/*** afficher le post précédent ***/
   $(".lightbox__prev").click(function (e) {
     var nextImage = image.attr('data-next-img');
     var nextref = image.attr('data-next-ref');
@@ -97,9 +100,10 @@ $(document).ready(function() {
     if (nextImage != "null" && next.length > 0) {
       afficher_lightbox(nextImage, nextref, nextcategorie);
       image = next;
-      console.log(image);
     }
   });
+
+  /*** afficher le post suivant ***/
   $(".lightbox__next").click(function (e) {
     var previousImage = image.attr('data-previous-img');
     var previousref = image.attr('data-previous-ref');
@@ -108,9 +112,10 @@ $(document).ready(function() {
     if (previousImage != "null" && previous.length > 0) {
       afficher_lightbox(previousImage, previousref, previouscategorie);
       image = previous;
-      console.log(image);
     }
   });
+
+  /*** fonction qui permet de rajouter les informations dans les balises html du template part lightbox ***/
   function afficher_lightbox(urlImage, ref, categorie) {
     $("#lightbox__container_content").empty();
     var infos = "<div class='lightbox__infos'><p>"+ref+"</p><p>"+categorie+"</p>";
@@ -120,6 +125,7 @@ $(document).ready(function() {
     $("#lightbox__container_content").removeClass("hidden");
     $('.lightbox').css('display', 'block');
   }
+  /*** fermer le lighbox ***/
   $(document).on('click', '.lightbox__close', function () {
     $('.lightbox').css('display', 'none');
     $("#lightbox__container_content").empty();
@@ -139,7 +145,7 @@ $('.interaction-photo__btn').click(function () {
   var reference = $('#reference-photo').text();
   $('#ref').val(reference);
 });
-
+/*** flèches de navigation ***/
   navigationPhotos($('.arrow-gauche'), $('.previous-image'));
   navigationPhotos($('.arrow-droite'), $('.next-image'));
   
@@ -162,7 +168,7 @@ $('.interaction-photo__btn').click(function () {
     const navMenu = document.getElementById('nav_header');
 
     toggleButton.addEventListener('click', function() {
-        navMenu.classList.toggle('visible'); // Ajoute ou supprime la classe 'visible' au menu de navigation
+        navMenu.classList.toggle('visible'); 
     });
 });
 
