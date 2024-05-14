@@ -4,6 +4,7 @@
 
 <section class="hero">
   <h1>Photographe event</h1>
+  <!-- Récupération de l'image hero -->
   <?php
         $hero_image = new WP_Query([
             'post_type' => 'photo',
@@ -32,6 +33,7 @@
   <select id="select-categorie" name="categories_photos">
       <option  value="all" hidden disabled selected id="all-categorie">CATÉGORIES</option>
       <option value="all">Toutes les catégories</option>
+      <!-- Récupération de la taxonomie catégorie -->
           <?php 
               if ($terms = get_terms([
                 'taxonomy' => 'categorie',
@@ -46,13 +48,12 @@
   </select>
 </form>
 
-
-
     <form id="format" class="taxonomie taxonomie_format filtre half">
       <!--<label for="select-format">FORMATS</label>-->
       <select id="select-format" name="format">
         <option id="all-format" value="all" hidden disabled selected>FORMATS</option>
         <option value="all">Tous les formats</option>
+     <!-- Récupération de la taxonomie Format -->
         <?php
             if ($terms = get_terms([
               'taxonomy' => 'format',
@@ -80,7 +81,7 @@
   </div>
 
 </div>
-
+<!-- Récupération des photos -->
   <div class="photo_type organisation">
     <?php
             $photos = new WP_Query([
@@ -100,22 +101,7 @@
             wp_reset_postdata();
         ?>
   </div>
-
-<!--Lightbox-->
-
-  <div class="lightbox hidden" id="lightbox">
-      <button class="lightbox__close" title="Refermer cet agrandissement"></button>
-      <div class="lightbox__container">
-          <div class="lightbox__loader hidden"></div>
-          <div class="lightbox__container_info flexcolumn" id="lightbox__container_info">
-              <div class="lightbox__container_content flexcolumn" id="lightbox__container_content"></div>
-              <button class="lightbox__next" aria-label="Voir la photo suivante" title="Photo suivante"></button>
-              <button class="lightbox__prev" aria-label="Voir la photo précente" title="Photo précédente"></button>
-          </div>
-      </div>
-  </div>
-
-
+<!--Bouton charger plus-->
   <div class="charger_plus_btn" id="charger_plus">
     <input type="button" style="text-align: center;" value="Charger plus">
     <img id="btn-charger_plus" src="<?php echo get_template_directory_uri(); ?>/Photos NMota/camera_icon.png"
@@ -123,9 +109,5 @@
   </div>
 
 </section>
-
-
-
-
 
 <?php get_footer(); ?>
