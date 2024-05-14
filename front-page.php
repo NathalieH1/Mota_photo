@@ -7,13 +7,6 @@
   <?php
         $hero_image = new WP_Query([
             'post_type' => 'photo',
-            'tax_query' => [
-                [
-                    'taxonomy' => 'format',
-                    'field' => 'slug',
-                    'terms' => 'paysage',
-                ],
-            ],
             'orderby' => 'rand',
             'posts_per_page' => '1', ]);
         if ($hero_image->have_posts()) {

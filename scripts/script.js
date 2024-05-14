@@ -4,18 +4,25 @@
     'use strict';
   
   let pageActuelle = 1;
-  
+    /***   click sur le button charger plus   ***/
   $('#btn-charger_plus').on('click', function () {
       pageActuelle++;
       ajaxRequest(true);
   });
-  
+  /***   évenement du changement sur les filtres   ***/
   $(document).on('change', '.taxonomie', function (e) {
       e.preventDefault();
       pageActuelle = 1;
       ajaxRequest(false);
   });
-  
+      /***  la réquéte ajax vers le serveur wordpress pour récupérer les posts selon les critéres de l'utilisateur 
+     *    url: contient l'url vers /admin-ajax.php
+     *    action : la fonction filtrer du fichier functions.php
+     *    data: la catégorie souhaitée categorieSelection et format formatSelection et l'ordre puis la page actuelle
+     *    le button charger plus permet de faire un append() rajouter des posts au posts existant et les filtres permet de faire
+     *    html() afficher un nouveau contenus
+     * 
+      ***/
 
   function ajaxRequest(chargerPlus) {
     var categorieSelection = ($('#select-categorie').val() == null ) ? 'all' : $('#select-categorie').val();
@@ -24,7 +31,7 @@
   
       $.ajax({
           type: 'POST',
-          url: "http://localhost/Nathalie_Mota/wp-admin/admin-ajax.php",
+          url: my_ajax_obj.ajax_url,
           dataType: 'html',
           data: {
               action: 'filter',
