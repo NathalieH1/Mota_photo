@@ -351,7 +351,10 @@ justify-content: space-between;
   transition: all .3s ease-in-out;
   display: none;
 }
-
+.lightbox__infos {
+  display: flex;
+  justify-content: space-around;
+}
 .lightbox__close,
 .lightbox__prev,
 .lightbox__next {
@@ -383,10 +386,11 @@ justify-content: space-between;
   z-index: 12;
 }.lightbox__prev {
   background: url("Photos NMota/prev_white.svg") center center / 100% 100% no-repeat;
-  left: 20px;
+  left: 100px;
+  font-weight:800;
 }.lightbox__next {
   background: url("Photos NMota/next_white.svg") center center / 100% 100% no-repeat;
-  right: 20px;
+  right: 100px;
 }.lightbox .lightbox__container {
   position: fixed;
   display: flex;
@@ -412,7 +416,7 @@ max-width: 100%;
 .lightbox__container_content img {
   object-fit: contain;
   width: 70vw;
-  height: 100vh;
+  height: 90vh;
   max-width: 80%;
   max-height: 90%;
 }
@@ -423,6 +427,8 @@ max-width: 100%;
 .lightbox .lightbox__container p {
   color: #FFFFFF;
   opacity: 1;
+  text-transform:uppercase;
+  font-size: 90px;
 }.lightbox .lightbox__container h2 {
   width: 80%;
   font-weight: 400;
@@ -430,7 +436,7 @@ max-width: 100%;
   padding-top: 10px;
   text-align: left;
 }.lightbox .lightbox__container p {
-  font-size: 10px;
+  font-size: 15px;
 }.lightbox .lightbox__container .lightbox__info {
   text-align: left;
   width: 80%;
