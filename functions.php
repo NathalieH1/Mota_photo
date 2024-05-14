@@ -16,7 +16,7 @@ add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 function mota_photo_enqueue_scripts() {
     // Enqueue le script JavaScript avec URL absolue
     wp_enqueue_script('main-js', get_template_directory_uri() . '/scripts/script.js', array('jquery'), '', true);
-    wp_localize_script('script', 'my_ajax_obj', ['ajax_url' => admin_url('admin-ajax.php')]);
+    wp_localize_script('main-js', 'my_ajax_obj', ['ajax_url' => admin_url('admin-ajax.php')]);
 }
 add_action('wp_enqueue_scripts', 'mota_photo_enqueue_scripts');
 
