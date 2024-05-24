@@ -50,11 +50,11 @@ if ($previous_post) {
           <div>
               <div class="photo-hover">
                 <!--cette ligne affiche une icône pour passer en mode plein écran-->
-                  <img class="full-screen" src="<?php echo get_template_directory_uri(); ?>/Photos NMota/fullscreen.png" alt="Icône de plein écran" />
+                  <img class="full-screen" src="<?php echo get_template_directory_uri(); ?>/assets/images/fullscreen.png" alt="Icône de plein écran" />
                   <!--lien hypertexte qui enveloppe l'icône et qui pointe vers la page individuelle de chaque photo-->
                   <a href="<?php echo get_post_permalink(); ?>">
                   <!--l'icône de l'oeil également enroulé dans le lien hypertexte-->
-                      <img class="oeil" src="<?php echo get_template_directory_uri(); ?>/Photos NMota/eye_icon.png" alt="Icône en fome d'oeil" />
+                      <img class="oeil" src="<?php echo get_template_directory_uri(); ?>/assets/images/eye_icon.png" alt="Icône en fome d'oeil" />
                   </a>
                   <div class="photo-infos">
                       <p><?php the_title(); ?></p>
