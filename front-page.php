@@ -8,8 +8,9 @@
   <?php
         $hero_image = new WP_Query([
             'post_type' => 'photo',
-            'orderby' => 'rand',
-            'posts_per_page' => '1', ]);
+            'orderby' => 'date',
+            'offset' => 13,
+            'posts_per_page' => 1, ]);
         if ($hero_image->have_posts()) {
             while ($hero_image->have_posts()) {
                 $hero_image->the_post();
@@ -88,12 +89,12 @@
                 'post_type' => 'photo',
                 'orderby' => 'date',
                 'order' => 'DESC',
-                'posts_per_page' => 4,
+                'posts_per_page' => 8,
                 'paged' => 1, ]
             );
             if ($photos->have_posts()) {
                 while ($photos->have_posts()) {
-                    include 'Templates-parts/photo_block.php';
+                    include 'templates-parts/photo_block.php';
                 }
             } else {
                 echo '';
@@ -104,7 +105,7 @@
 <!--Bouton charger plus-->
   <div class="charger_plus_btn" id="charger_plus">
     <input type="button" style="text-align: center;" value="Charger plus">
-    <img id="btn-charger_plus" src="<?php echo get_template_directory_uri(); ?>/Photos NMota/camera_icon.png"
+    <img id="btn-charger_plus" src="<?php echo get_template_directory_uri(); ?>/assets/images/camera_icon.png"
       alt="Icône d'appareil photo" />
   </div>
 
