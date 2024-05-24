@@ -12,9 +12,9 @@
 <header>
     <section class="header">
         <div>
-          <a href="<?php echo home_url( '/' ); ?>"><img class="header_logo" src="<?php echo get_template_directory_uri(); ?>/Photos NMota/Logo.png" alt="Logo NMota" id="logo"></a>
+          <a href="<?php echo home_url( '/' ); ?>"><img class="header_logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo.png" alt="Logo NMota" id="logo"></a>
         </div>
-        <span id="toggle" class="menu-toggle">☰</span>
+        <span id="toggle" class="menu-toggle"></span>
              
         <nav id="nav_header" role="navigation" aria-label="<?php _e('Menu principal', 'Mota_photo'); ?>" class="hidden">
             
