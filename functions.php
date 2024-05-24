@@ -9,13 +9,13 @@ add_theme_support( 'title-tag' );
 
 // Chargement du fichier css
 function enqueue_custom_styles() {
-    wp_enqueue_style('custom-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('custom-style', get_template_directory_uri() . '/assets/css/style.css');
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_styles');
 
 function mota_photo_enqueue_scripts() {
     // Enqueue le script JavaScript avec URL absolue
-    wp_enqueue_script('main-js', get_template_directory_uri() . '/scripts/script.js', array('jquery'), '', true);
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/script.js', array('jquery'), '', true);
     wp_localize_script('main-js', 'my_ajax_obj', ['ajax_url' => admin_url('admin-ajax.php')]);
 }
 add_action('wp_enqueue_scripts', 'mota_photo_enqueue_scripts');
@@ -56,7 +56,7 @@ function filter()
         'post_type' => 'photo',
         'orderby' => 'date',
         'order' => $_POST['orderDirection'],
-        'posts_per_page' => 4,
+        'posts_per_page' => 8,
         'paged' => $_POST['page'],
         'tax_query' => [
                 'relation' => 'AND',
@@ -79,7 +79,7 @@ function filter()
     );
     if ($photos->have_posts()) {
         while ($photos->have_posts()) {
-            include 'Templates-parts/photo_block.php';
+            include 'templates-parts/photo_block.php';
         }
     } else {
         echo '';
