@@ -6,7 +6,7 @@
   <div class="modal-content">
             <div class="modal-header">
              <div class="image-container">
-                <img src="<?php echo get_template_directory_uri(); ?>/Photos NMota/contact_modale_desktop.png" alt="Le mot CONTACT">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contact_modale_desktop.png" alt="Le mot CONTACT">
              </div>   
             </div>
         <div class="modal-body">
