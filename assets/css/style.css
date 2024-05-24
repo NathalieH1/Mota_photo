@@ -1,12 +1,3 @@
-/*
-Theme Name: Nathalie Mota
-Theme URI: https://mota_photo.org
-Description: Site photographe événementiel
-Author: Nathalie MOTA
-Author URI: https://nathalie_mota.org/
-Version: 1.0
-*/
-
 
 /* Pour la police Space Mono */
 @font-face {
@@ -134,9 +125,14 @@ main {
 .wpcf7-form p {
   margin-bottom: 10px; 
 }
-input.wpcf7-form-control {
+input.wpcf7-form-control{
+  height: 50px;
+}
+input.wpcf7-form-control.wpcf7-submit.has-spinner {
   width:43%;
   height: 50px;
+  border:none;
+  background-color: #D8D8D8;
 }
 textarea.wpcf7-form-control {
   width:43%;
@@ -203,12 +199,15 @@ nav .menu {
 
 }
 nav li:hover {
- font-weight: 700;
+ 
  cursor: pointer;
 }
 .menu a {
   color:black;
   text-decoration:none;
+}
+.menu a:hover {
+  color: #E00000;
 }
 
 .header li {
@@ -237,6 +236,16 @@ margin-left: 45px;
 }
 .footer_nav li {
   min-width: 196px;
+}
+.footer-links a {
+ color:black;
+ text-decoration: none;
+ margin-left: 100px;
+ margin-right: 50px;
+}
+
+.lien-footer:hover {
+  color: #E00000;
 }
 
 /*** hero ***/
@@ -293,7 +302,7 @@ margin-left: 45px;
 
 /* Couleur de fond lorsque survolé */
 .js-categorie.hover {
-  background-color: #FFD6D6;
+  background-color: #FFD6D6 !important;
 }
 
 /* Couleur de fond lorsque sélectionné */
@@ -303,7 +312,7 @@ margin-left: 45px;
 
 /* Couleur de fond lorsque cliqué */
 .js-categorie.active {
-  background-color: #FE5858;
+  background-color: #FE5858 !important;
 }
 
 /* Définition des styles de base pour les options */
@@ -313,7 +322,7 @@ margin-left: 45px;
 
 /* Couleur de fond lorsque survolé */
 .js-format.hover {
-  background-color: #FFD6D6;
+  background-color: #FFD6D6 !important;
 }
 
 /* Couleur de fond lorsque sélectionné */
@@ -323,7 +332,7 @@ margin-left: 45px;
 
 /* Couleur de fond lorsque cliqué */
 .js-format:active {
-  background-color: #FE5858;
+  background-color: #FE5858 !important;
 }
 
 
@@ -342,9 +351,9 @@ margin-left: 45px;
 /*** photos ***/
 
 .photos {
-padding-top: 32px !important;
-width: 80%;
-padding: 0 10%;
+padding-top: 42px !important;
+width: 50%;
+padding: 0 25%;
 }
 .photo_type {
  flex-wrap: wrap;
@@ -380,15 +389,125 @@ padding: 0 10%;
 }
 
 .organisation {
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .half {
   width: 49.2%;
 }
 
+/*** post_photo ***/ 
 
+.post_photo {
+  height: 45vh;
+  margin-bottom: 20px;
+}
+
+.post_photo .img-photo {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  display: block;
+}
+
+.post_photo>div {
+display: inline;
+}
+
+.post_photo>div:hover .photo-hover {
+opacity: 1;
+}
+
+.post_photo .photo-hover {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin-top: -45vh;
+  opacity: 0;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.92) 100%);
+}
+
+.post_photo .photo-hover .full-screen {
+  width: 35px;
+  height: 35px;
+  align-self: flex-end;
+  margin-top: 2%;
+  margin-right: 2%;
+  cursor: pointer;
+}
+
+.post_photo .photo-hover a {
+  width: 46px;
+  height: 46px;
+  margin: auto;
+}
+
+.post_photo .photo-hover a .oeil {
+  width: 100%;
+  height: auto;
+}
+
+.post_photo .photo-hover .photo-infos {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding-left: 3%;
+  padding-right: 3%;
+  padding-bottom: 2%;
+}
+
+.post_photo .photo-hover .photo-infos p:last-child {
+  font-family: "Space Mono", monospace;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.post_photo .photo-hover .photo-infos p:first-child {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+/*** charger plus ***/
+
+.charger_plus_btn {
+  margin: 27px auto 47px auto;
+  width: 120px;
+  height: 34px;
+}
+
+.charger_plus_btn input {
+  width: 100%;
+  height: 100%;
+  font-family: "Space Mono", monospace;
+  background-color: #D8D8D8;
+  font-size: 12px;
+  border: none;
+  border-radius: 2px;
+}
+
+.charger_plus_btn img {
+  cursor: pointer;
+  background-color: black;
+  padding: 9px 52px;
+  opacity: 0;
+  position: absolute;
+  width: 16px;
+  margin-left: -120px;
+  transition: all 350ms ease-in-out;
+  border-radius: 2px;
+}
+
+.charger_plus_btn img:hover {
+  opacity: 1;
+}
 /*** lightbox ***/
 
 .lightbox {
@@ -412,7 +531,6 @@ justify-content: space-between;
 .lightbox__next {
   position: absolute;
   border: none;
-  /* text-indent : on cache le texte des boutons */
   text-indent: -3000px;
   cursor: pointer;
   opacity:.5;
@@ -439,7 +557,6 @@ justify-content: space-between;
 }.lightbox__prev {
   background: url("../images/prev_white.svg") center center / 100% 100% no-repeat;
   left: 100px;
-  font-weight:800;
 }.lightbox__next {
   background: url("../images/next_white.svg") center center / 100% 100% no-repeat;
   right: 100px;
@@ -502,245 +619,133 @@ max-width: 100%;
 }
 
 
-/*** post_photo ***/ 
-
-.post_photo {
-  height: 74vh;
-  margin-bottom: 20px;
-}
-
-.post_photo .img-photo {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: -1;
-  display: block;
-}
-
-.post_photo>div {
-display: inline;
-}
-
-.post_photo>div:hover .photo-hover {
-opacity: 1;
-}
-
-.post_photo .photo-hover {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  margin-top: -74vh;
-  opacity: 0;
-  position: relative;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.92) 100%);
-}
-
-.post_photo .photo-hover .full-screen {
-  width: 35px;
-  height: 35px;
-  align-self: flex-end;
-  margin-top: 2%;
-  margin-right: 2%;
-  cursor: pointer;
-}
-
-.post_photo .photo-hover a {
-  width: 46px;
-  height: 46px;
-  margin: auto;
-}
-
-.post_photo .photo-hover a .oeil {
-  width: 100%;
-  height: auto;
-}
-
-.post_photo .photo-hover .photo-infos {
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-bottom: 2%;
-}
-
-.post_photo .photo-hover .photo-infos p:last-child {
-font-family: "Space Mono", monospace;
-font-size: 14px;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-}
-
-.post_photo .photo-hover .photo-infos p:first-child {
-font-family: "Poppins", sans-serif;
-font-weight: 500;
-font-size: 14px;
-text-transform: uppercase;
-}
-
-/*** charger plus ***/
-
-.charger_plus_btn {
-  margin: 27px auto 47px auto;
-  width: 120px;
-  height: 34px;
-}
-
-.charger_plus_btn input {
-  width: 100%;
-  height: 100%;
-  font-family: "Space Mono", monospace;
-  background-color: #D8D8D8;
-  font-size: 12px;
-  border: none;
-  border-radius: 2px;
-}
-
-.charger_plus_btn img {
-  cursor: pointer;
-  background-color: black;
-  padding: 9px 52px;
-  opacity: 0;
-  position: absolute;
-  width: 16px;
-  margin-left: -120px;
-  transition: all 350ms ease-in-out;
-  border-radius: 2px;
-}
-
-.charger_plus_btn img:hover {
-opacity: 1;
-}
-
 /*** single ***/
 
 .single-page {
-width: 80%;
-padding: 0 10%;
+  width: 80%;
+  padding: 0 10%;
 }
 
 
 .single-photo {
-margin-top: 38px;
-font-family: "Space Mono", monospace;
+  margin-top: 38px;
+  font-family: "Space Mono", monospace;
 }
 
 .single-description {
-border-bottom: 1px solid black;
-align-self: flex-end;
-padding-bottom: 43px;
+  border-bottom: 1px solid black;
+  align-self: flex-end;
+  padding-bottom: 43px;
 }
 
 .single-image {
-object-fit: contain;
+  object-fit: contain;
 }
 
 .single-photo h1 {
-font-style: italic;
-padding-bottom: 40px;
-width: 70%;
-margin-left: -1%;
+  font-style: italic;
+  padding-bottom: 40px;
+  width: 70%;
+  margin-left: -1%;
 }
 
 .single-photo p {
-font-size: 14px;
-letter-spacing: 0.1em;
-text-transform: uppercase;
-padding-bottom: 9px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-bottom: 9px;
 }
 
 .interaction-photo {
-height: 118px;
-border-bottom: 1px solid black;
+  height: 118px;
+  border-bottom: 1px solid black;
 }
 
 .interaction-photo>div {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .interaction-photo__btn {
-width: 142px;
+  width: 142px;
 }
 
 .interaction-photo__navigation {
-width: 108px;
-display: flex;
-flex-direction: column;
+  width: 108px;
+  display: flex;
+  flex-direction: column;
 }
 
 .interaction-photo__navigation .preview {
-width: 78px;
-height: 50%;
-margin: auto 0 auto auto;
+  width: 78px;
+  height: 50%;
+  margin: auto 0 auto auto;
 }
 
 .interaction-photo__navigation .preview img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-opacity: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
 }
 
 .interaction-photo__navigation .preview .previous-image {
-margin-top: 38%;
+  margin-top: 38%;
 }
 
 .interaction-photo__navigation .preview .next-image {
-margin-top: -38%;
+  margin-top: -38%;
 }
 
 .interaction-photo__navigation .arrows {
-width: 108px;
-display: flex;
-justify-content: space-between;
-position: absolute;
-margin-top: 92px;
+  width: 108px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  margin-top: 92px;
 }
 
 .interaction-photo__navigation .arrows .arrow {
-width: 25px;
-cursor: pointer;
+  width: 25px;
+  cursor: pointer;
 }
 
 .wpcf7-text {
   text-transform: uppercase;
 }
 .recommandations {
-padding-top: 77px;
+  padding-top: 77px;
 }
 
 .recommandations h2 {
-padding-bottom: 40px;
-font-family: "Space Mono", monospace;
-font-weight: 400;
-font-size: 18px;
-line-height: 27px;
-letter-spacing: 0.1em;
-text-transform: uppercase;
+  padding-bottom: 40px;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 27px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .recommandations__btn {
-width: 214px;
-display: block;
-margin: 51px auto 71px auto;
+  width: 214px;
+  display: block;
+  margin: 51px auto 71px auto;
 }
 
 .texte {
-font-family: "Poppins", sans-serif;
-font-weight: 300;
-font-size: 14px;
-margin-right: 28px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  margin-right: 28px;
 }
 
 h1 {
-font-family: "Space Mono", monospace;
-font-weight: 400;
-font-size: 66px;
-line-height: 65px;
-text-transform: uppercase;
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-size: 66px;
+  line-height: 65px;
+  text-transform: uppercase;
 }
 
 /*** Media Queries ***/
@@ -748,12 +753,13 @@ text-transform: uppercase;
 @media all and (max-width: 391px) {
 
   .header {
-    margin-top: -10%;
+    margin-top: -12%;
   }
   .header_logo {
     margin-left: -20px;
     width: 80%;
   }
+  
   .menu-toggle {
       width: 30px;
       display: flex;
@@ -778,6 +784,24 @@ text-transform: uppercase;
     justify-content: center;
     text-align: center; /* Centre les éléments du menu */
 }
+#nav_header.visible {
+  display: block; /* Afficher le menu lorsque la classe 'visible' est ajoutée */
+}
+.menu-toggle {
+  display: inline-block; /* Afficher le bouton en version mobile */
+}
+
+/* Lorsque le menu est visible, afficher l'icône de croix */
+.menu-toggle.active::before {
+  content: '✖'; /* Icône de croix */
+}
+
+/* Par défaut, afficher l'icône de menu burger */
+.menu-toggle::before {
+  content: '☰'; /* Icône de menu burger */
+}
+
+
 
 section.hero {
   position: relative;
@@ -845,8 +869,16 @@ section.hero {
 .footer_nav ul {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
+#lien-footer2 {
+  margin-left: 130px;
+}
+#mention-texte {
+  margin-left: 80px;
+}
+
 .filtres.organisation {
   display:flex;
   flex-direction: column;
@@ -854,16 +886,17 @@ section.hero {
   align-items: center;
 text-align: center;
 }
-
 #format {
   display: flex;
   justify-content: center;
   align-items: center;
   
 }
-
 .filtres select {
   width: 100%;
+}
+option.js-categorie:hover {
+  background-color: #FE5858 !important;
 }
 .organisation {
   display: block;
@@ -871,10 +904,14 @@ text-align: center;
 .half {
   width: 100%;
 }
+.photo_type.organisation {
+  width:140%;
+  margin-left:-20%;
+}
 .post_photo {
-  height: 35vh;
+  height: 29vh;
 }.post_photo .photo-hover {
-  margin-top: -35vh;
+  margin-top: -29vh;
 }
 .modal-content {
 width: 100%;
@@ -882,6 +919,10 @@ height:100%;
 }
 .wpcf7-form {
  margin-left:-30px;
+}
+input.wpcf7-form-control.wpcf7-submit.has-spinner {
+  width:60%;
+  background-color: #D8D8D8;
 }
 textarea.wpcf7-form-control {
   width:60%;
@@ -896,4 +937,8 @@ input.wpcf7-form-control {
 #menu-item-60 {
   margin-right: 10%;
 }
+}
+.entry-title {
+  font-size: 30px;
+  text-align:center;
 }
