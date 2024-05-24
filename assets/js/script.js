@@ -169,6 +169,7 @@ $('.interaction-photo__btn').click(function () {
 
     toggleButton.addEventListener('click', function() {
         navMenu.classList.toggle('visible'); 
+        toggleButton.classList.toggle('active');
     });
 });
 
