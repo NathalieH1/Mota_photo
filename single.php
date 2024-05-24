@@ -53,18 +53,18 @@
 		 <?php if (!empty($prevPost)) {
 					 ?>
 		 <a href="<?php echo $prevLink; ?>">
-		   <img class="arrow arrow-gauche" src="<?php echo get_template_directory_uri(); ?>/Photos NMota/arrow_left.png"
+		   <img class="arrow arrow-gauche" src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_left.png"
 			 alt="Flèche pointant vers la gauche" />
 		 </a>
 		 <?php } else { ?>
 		 <img style="opacity:0; cursor: auto;" class="arrow "
-		   src="<?php echo get_template_directory_uri(); ?>/Photos NMota/arrow_left.png" />
+		   src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_left.png" />
 		  	<!-- affichage  de la flèche pour le post suivant contenant son url --> 
 		 <?php } if (!empty($nextPost)) {
 						 ?>
 		 <a href="<?php echo $nextLink; ?>">
 		   <img class="arrow arrow-droite"
-			 src="<?php echo get_template_directory_uri(); ?>/Photos NMota/arrow_right.png"
+			 src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_right.png"
 			 alt="Flèche pointant vers la droite" />
 		 </a>
 		 <?php } ?>
@@ -104,7 +104,7 @@
 				 if ($numberOfSimilarPictures > 0) {
 					 if ($photos->have_posts()) {
 						 while ($photos->have_posts()) {
-							 include 'Templates-parts/photo_block.php';
+							 include 'templates-parts/photo_block.php';
 						 }
 					 } else {
 						 echo '<p class="texte">Il n\'y a pas encore d\'autres photos à afficher dans cette catégorie.</p>';
@@ -116,9 +116,7 @@
 			 ?>
  
 	 </div>
-	 <button class="recommandations__btn bouton" onclick="window.location.href='<?php echo site_url() ?>'">
-	   Toutes les photos
-	 </button>
+
  
    </section>
  
