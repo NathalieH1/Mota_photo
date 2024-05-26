@@ -9,7 +9,7 @@
         $hero_image = new WP_Query([
             'post_type' => 'photo',
             'orderby' => 'date',
-            'offset' => 13,
+            'post__in' => get_option('sticky_posts'),
             'posts_per_page' => 1, ]);
         if ($hero_image->have_posts()) {
             while ($hero_image->have_posts()) {
