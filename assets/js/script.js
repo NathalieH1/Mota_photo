@@ -19,7 +19,7 @@
      *    action : la fonction filtrer du fichier functions.php
      *    data: la catégorie souhaitée categorieSelection et format formatSelection et l'ordre puis la page actuelle
      *    le button charger plus permet de faire un append() rajouter des posts au post existant et les filtres permettent de faire
-     *    html() afficher un nouveau contenu
+     *    un html() afficher un nouveau contenu
      * 
       ***/
 
